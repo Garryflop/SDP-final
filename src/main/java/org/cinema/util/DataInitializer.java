@@ -10,7 +10,7 @@ public class DataInitializer {
     
     public static void init() {
         initMovies();
-        System.out.println("✓ Data initialized: Movies and Showtimes loaded");
+        System.out.println("Data initialized: Movies and Showtimes loaded");
     }
     
     private static void initMovies() {
