@@ -1,6 +1,5 @@
-package com.project.model;// package your.package.model;
+package org.cinema.model;
 
-import org.cinema.model.Ticket;
 
 import java.time.LocalDateTime;
 import java.util.Collections;
@@ -87,11 +86,4 @@ public class Booking {
     }
 }
 
-/**
- * Simple status enum for booking lifecycle.
- */
-public enum BookingStatus {
-    PENDING,
-    CONFIRMED,
-    CANCELLED
-}
+

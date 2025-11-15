@@ -1,4 +1,4 @@
-package com.project.patterns.strategy;// package your.package.patterns.strategy;
+package org.cinema.patterns.strategy;// package your.package.patterns.strategy;
 
 
 import org.cinema.model.Ticket;

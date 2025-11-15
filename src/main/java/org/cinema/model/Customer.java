@@ -1,4 +1,4 @@
-package com.project.model;
+package org.cinema.model;
 
 
 public class Customer {

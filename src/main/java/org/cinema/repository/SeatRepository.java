@@ -1,6 +1,6 @@
-package com.project.repository;
+package org.cinema.repository;
 
-import com.project.model.Seat;
+import org.cinema.model.Seat;
 
 import java.util.*;
 

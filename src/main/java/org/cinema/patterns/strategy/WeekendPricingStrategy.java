@@ -1,6 +1,5 @@
-package com.project.patterns.strategy;
+package org.cinema.patterns.strategy;
 
-import com.project.patterns.strategy.PricingStrategy;
 import org.cinema.model.Ticket;
 
 import java.time.DayOfWeek;

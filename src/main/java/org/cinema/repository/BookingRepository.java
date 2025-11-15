@@ -1,7 +1,7 @@
-package com.project.repository;
+package org.cinema.repository;
 
 import com.project.model.Booking;
-import com.project.model.BookingStatus;
+import org.cinema.model.BookingStatus;
 
 import java.util.*;
 

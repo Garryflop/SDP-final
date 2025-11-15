@@ -1,4 +1,4 @@
-package com.project.model;
+package org.cinema.model;
 
 
 public class Seat {
@@ -48,11 +48,4 @@ public class Seat {
     }
 }
 
-/**
- * Seat type affects base price (you can use this later in PricingStrategy).
- */
-enum SeatType {
-    STANDARD,
-    PREMIUM,
-    VIP
-}
+
