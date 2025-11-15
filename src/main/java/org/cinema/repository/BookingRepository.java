@@ -1,7 +1,7 @@
 package org.cinema.repository;
 
-import com.project.model.Booking;
-import org.cinema.model.BookingStatus;
+import org.cinema.model.Booking;
+import org.cinema.model.enums.BookingStatus;
 
 import java.util.*;
 

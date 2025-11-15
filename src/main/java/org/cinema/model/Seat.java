@@ -1,6 +1,8 @@
 package org.cinema.model;
 
 
+import org.cinema.model.enums.SeatType;
+
 public class Seat {
     private final int row;
     private final int number;

@@ -1,4 +1,4 @@
-package org.cinema.model;
+package org.cinema.model.enums;
 
 public enum BookingStatus {
     PENDING,

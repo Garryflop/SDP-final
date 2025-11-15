@@ -1,10 +1,10 @@
-package org.cinema.patterns.builder;
+package org.cinema.builder;
 
-import com.project.model.Booking;
-import org.cinema.model.BookingStatus;
+import org.cinema.model.Booking;
+import org.cinema.model.enums.BookingStatus;
 import org.cinema.model.Customer;
 import org.cinema.model.Seat;
-import org.cinema.patterns.strategy.PricingStrategy;
+import org.cinema.strategy.PricingStrategy;
 import org.cinema.model.Ticket;
 
 import java.time.LocalDateTime;

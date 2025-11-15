@@ -1,5 +1,4 @@
-package org.cinema.patterns.strategy;// package your.package.patterns.strategy;
-
+package org.cinema.strategy;
 
 import org.cinema.model.Ticket;
 import java.time.LocalDateTime;
