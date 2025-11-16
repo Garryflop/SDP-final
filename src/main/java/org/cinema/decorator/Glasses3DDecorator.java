@@ -2,6 +2,7 @@ package org.cinema.decorator;
 
 import org.cinema.model.Ticket;
 
+//Concrete decorators
 public class Glasses3DDecorator extends TicketDecorator {
     private static final double GLASSES_PRICE = 5.0;
 

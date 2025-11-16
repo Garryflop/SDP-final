@@ -2,6 +2,7 @@ package org.cinema.decorator;
 
 import org.cinema.model.Ticket;
 
+//Decorator (Abstract Base)
 public abstract class TicketDecorator implements Ticket {
     protected Ticket ticket;
 

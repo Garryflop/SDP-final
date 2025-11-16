@@ -2,6 +2,7 @@ package org.cinema.decorator;
 
 import org.cinema.model.Ticket;
 
+//Concrete decorators
 public class SnackComboDecorator extends TicketDecorator {
     private static final double SNACK_PRICE = 10.0;
 

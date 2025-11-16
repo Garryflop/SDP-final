@@ -44,30 +44,28 @@ import java.util.Set;
  * 5. Observer Pattern - Event notifications
  * 6. Adapter Pattern - Payment gateway integration
  * 7. Facade Pattern - This class simplifies the complex subsystem
- * 
- * Student 3: ERNAR
  */
 public class CinemaBookingFacade {
     // Repositories
-    private MovieRepository movieRepository;
-    
+    private final MovieRepository movieRepository;
+
     // Observer pattern components
-    private BookingSubject bookingSubject;
-    private EmailNotificationObserver emailObserver;
-    private SMSNotificationObserver smsObserver;
-    private InventoryObserver inventoryObserver;
+    private final BookingSubject bookingSubject;
+    private final EmailNotificationObserver emailObserver;
+    private final SMSNotificationObserver smsObserver;
+    private final InventoryObserver inventoryObserver;
     
     // Services
-    private BookingService bookingService;
-    private PaymentService paymentService;
+    private final BookingService bookingService;
+    private final PaymentService paymentService;
     
     // Factory
-    private TicketFactory ticketFactory;
+    private final TicketFactory ticketFactory;
     
     // Strategy for pricing
-    private MatineePricingStrategy matineePricing;
-    private WeekendPricingStrategy weekendPricing;
-    private HolidayPricingStrategy holidayPricing;
+    private final MatineePricingStrategy matineePricing;
+    private final WeekendPricingStrategy weekendPricing;
+    private final HolidayPricingStrategy holidayPricing;
 
     /**
      * Initialize the facade with all subsystems
@@ -410,6 +408,14 @@ public class CinemaBookingFacade {
 
     public InventoryObserver getInventoryObserver() {
         return inventoryObserver;
+    }
+
+    public EmailNotificationObserver getEmailObserver() {
+        return emailObserver;
+    }
+
+    public SMSNotificationObserver getSmsObserver() {
+        return smsObserver;
     }
 
     /**

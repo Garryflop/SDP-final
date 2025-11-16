@@ -137,6 +137,13 @@ public class BookingService {
     }
 
     /**
+     * Get the booking subject for observer management
+     */
+    public BookingSubject getBookingSubject() {
+        return bookingSubject;
+    }
+
+    /**
      * Generate unique booking ID
      */
     private String generateBookingId() {
