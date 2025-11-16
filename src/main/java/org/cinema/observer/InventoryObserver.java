@@ -4,7 +4,9 @@ import org.cinema.model.enums.BookingEvent;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * Concrete Observer for inventory management
@@ -14,14 +16,16 @@ import java.util.Map;
  */
 public class InventoryObserver implements BookingObserver {
     private Map<String, Integer> seatInventory;
-    private Map<String, Integer> bookingCounts;
+    private Map<String, Integer> bookingSeatCounts; // Tracks seats per booking
+    private Set<String> confirmedBookings; // Tracks confirmed booking IDs
     private int totalSeatsReserved;
     private int totalSeatsReleased;
     private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
     public InventoryObserver() {
         this.seatInventory = new HashMap<>();
-        this.bookingCounts = new HashMap<>();
+        this.bookingSeatCounts = new HashMap<>();
+        this.confirmedBookings = new HashSet<>();
         this.totalSeatsReserved = 0;
         this.totalSeatsReleased = 0;
 
@@ -99,11 +103,11 @@ public class InventoryObserver implements BookingObserver {
      * Handle booking confirmation
      */
     private void handleBookingConfirmed(String bookingId, String details, String timestamp) {
-        bookingCounts.merge(bookingId, 1, Integer::sum);
+        confirmedBookings.add(bookingId);
 
         System.out.println("\n[InventoryObserver] BOOKING CONFIRMED");
         System.out.println("├─ Booking ID: " + bookingId);
-        System.out.println("├─ Total Confirmed Bookings: " + bookingCounts.size());
+        System.out.println("├─ Total Confirmed Bookings: " + confirmedBookings.size());
         System.out.println("└─ Timestamp: " + timestamp);
     }
 
@@ -120,7 +124,7 @@ public class InventoryObserver implements BookingObserver {
      * Update inventory statistics
      */
     private void updateInventoryStats(String bookingId, int seatsCount) {
-        bookingCounts.put(bookingId, seatsCount);
+        bookingSeatCounts.put(bookingId, seatsCount);
     }
 
     /**
@@ -152,7 +156,8 @@ public class InventoryObserver implements BookingObserver {
         System.out.println("\n╔════════════════════════════════════════════════════════╗");
         System.out.println("║           INVENTORY REPORT                             ║");
         System.out.println("╚════════════════════════════════════════════════════════╝");
-        System.out.println("Total Bookings Tracked: " + bookingCounts.size());
+        System.out.println("Total Bookings Tracked: " + bookingSeatCounts.size());
+        System.out.println("Total Confirmed Bookings: " + confirmedBookings.size());
         System.out.println("Total Seats Reserved: " + totalSeatsReserved);
         System.out.println("Total Seats Released: " + totalSeatsReleased);
         System.out.println("Net Seats Occupied: " + (totalSeatsReserved - totalSeatsReleased));
@@ -169,6 +174,6 @@ public class InventoryObserver implements BookingObserver {
     }
 
     public int getBookingCount() {
-        return bookingCounts.size();
+        return confirmedBookings.size();
     }
 }
